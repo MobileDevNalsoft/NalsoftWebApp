@@ -1477,6 +1477,18 @@ a.theme-btn.style-three:not(:hover) {
   background-color: var(--tekprof-primary-color);
 }
 
+/* CTA (Ready to Get IT Consultations) shade overlay using brand shade var */
+.footer-top.bgs-cover {
+  position: relative;
+}
+.footer-top.bgs-cover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--tekprof-primary-shade, rgba(252, 85, 70, 0.7));
+  pointer-events: none;
+}
+
 .bgc-lighter {
   background-color: var(--tekprof-lighter-color);
 }
