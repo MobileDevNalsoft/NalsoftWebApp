@@ -5933,11 +5933,13 @@ h6,
 }
 .presence-marker {
   position: absolute;
-  width: 10px;
-  height: 10px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
   background: #574FF5;
   box-shadow: 0 0 0 6px rgba(87,79,245,.15), 0 0 0 14px rgba(87,79,245,.06);
+  z-index: 10;
+  cursor: pointer;
 }
 .presence-marker::after {
   content: '';
@@ -5977,19 +5979,37 @@ h6,
 .presence-dot.dubai { background:#FC5546; }
 .presence-dot.hyderabad { background:#021433; }
 
-/* Custom marker styles for Dubai and Hyderabad */
+/* Specific marker colors for Dubai and Hyderabad */
 .dubai-marker {
   background: #FC5546 !important;
   box-shadow: 0 0 0 6px rgba(252,85,70,.15), 0 0 0 14px rgba(252,85,70,.06) !important;
-}
-
-.dubai-marker::after {
-  background: #ff8a7a !important;
+  border: 2px solid #fff !important;
+  animation: pulse-dubai 2s infinite;
 }
 
 .hyderabad-marker {
   background: #021433 !important;
   box-shadow: 0 0 0 6px rgba(2,20,51,.15), 0 0 0 14px rgba(2,20,51,.06) !important;
+  border: 2px solid #fff !important;
+  animation: pulse-hyderabad 2s infinite;
+}
+
+/* Pulse animations for better visibility */
+@keyframes pulse-dubai {
+  0% { box-shadow: 0 0 0 6px rgba(252,85,70,.15), 0 0 0 14px rgba(252,85,70,.06); }
+  50% { box-shadow: 0 0 0 8px rgba(252,85,70,.25), 0 0 0 16px rgba(252,85,70,.1); }
+  100% { box-shadow: 0 0 0 6px rgba(252,85,70,.15), 0 0 0 14px rgba(252,85,70,.06); }
+}
+
+@keyframes pulse-hyderabad {
+  0% { box-shadow: 0 0 0 6px rgba(2,20,51,.15), 0 0 0 14px rgba(2,20,51,.06); }
+  50% { box-shadow: 0 0 0 8px rgba(2,20,51,.25), 0 0 0 16px rgba(2,20,51,.1); }
+  100% { box-shadow: 0 0 0 6px rgba(2,20,51,.15), 0 0 0 14px rgba(2,20,51,.06); }
+}
+
+/* Custom marker styles for Dubai and Hyderabad */
+.dubai-marker::after {
+  background: #ff8a7a !important;
 }
 
 .hyderabad-marker::after {
@@ -13780,12 +13800,12 @@ blockquote .blockquote-footer:before {
 
 .client-logo-active .client-logo-item img,
 .client-logo-active-two .client-logo-item img {
-  opacity: 0.5;
+  opacity: 1;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
-  -webkit-filter: grayscale(1);
-  filter: grayscale(1);
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
   display: inline-block;
 }
 

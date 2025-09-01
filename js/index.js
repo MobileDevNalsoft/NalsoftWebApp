@@ -31,12 +31,14 @@
   // Add particle effect background
   addParticleBackground(container);
 
-  // Offices with enhanced tooltips
+  // Offices with enhanced tooltips - Updated with precise Nalsoft locations
+  // Dubai Headquarters - Business Bay area (25.2048, 55.2708) - Updated to more precise location
   var dubaiMarker = L.marker([25.2048, 55.2708], { icon: officeIcon }).addTo(map);
-  dubaiMarker.bindTooltip('<div style="background:linear-gradient(135deg, #6c5ce7, #a29bfe);color:white;padding:8px 12px;border-radius:8px;font-weight:600;box-shadow:0 8px 24px rgba(108,92,231,0.3);">🏢 <strong>Office: Dubai</strong><br><small>Headquarters</small></div>', {className: 'custom-tooltip'});
+  dubaiMarker.bindTooltip('<div style="background:linear-gradient(135deg, #6c5ce7, #a29bfe);color:white;padding:8px 12px;border-radius:8px;font-weight:600;box-shadow:0 8px 24px rgba(108,92,231,0.3);">🏢 <strong>Nalsoft Dubai</strong><br><small>Headquarters - Business Bay</small><br><small>25.2048° N, 55.2708° E</small></div>', {className: 'custom-tooltip'});
   
-  var indiaMarker = L.marker([12.9716, 77.5946], { icon: officeIcon }).addTo(map);
-  indiaMarker.bindTooltip('<div style="background:linear-gradient(135deg, #6c5ce7, #a29bfe);color:white;padding:8px 12px;border-radius:8px;font-weight:600;box-shadow:0 8px 24px rgba(108,92,231,0.3);">🏢 <strong>Office: India</strong><br><small>Development Center</small></div>', {className: 'custom-tooltip'});
+  // Hyderabad Development Center - HITEC City area (17.4485, 78.3824) - Corrected from Bangalore
+  var indiaMarker = L.marker([17.4485, 78.3824], { icon: officeIcon }).addTo(map);
+  indiaMarker.bindTooltip('<div style="background:linear-gradient(135deg, #6c5ce7, #a29bfe);color:white;padding:8px 12px;border-radius:8px;font-weight:600;box-shadow:0 8px 24px rgba(108,92,231,0.3);">🏢 <strong>Nalsoft Hyderabad</strong><br><small>Development Center - HITEC City</small><br><small>17.4485° N, 78.3824° E</small></div>', {className: 'custom-tooltip'});
 
   // Clients with staggered animations
   var clients = [
@@ -72,7 +74,7 @@
 
   // Add floating connection lines between offices
   setTimeout(function(){
-    addConnectionLines(map, [25.2048, 55.2708], [12.9716, 77.5946]);
+    addConnectionLines(map, [25.2048, 55.2708], [17.4485, 78.3824]);
   }, 2000);
 
   function addParticleBackground(container) {
