@@ -6034,6 +6034,20 @@ h6,
   z-index: 10;
 }
 
+/* Header spacing tweaks (desktop) */
+@media only screen and (min-width: 992px) {
+  /* Reduce overall left/right padding inside header container */
+  .main-header .header-upper .container {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  /* Tighten horizontal spacing between main menu items and slightly reduce vertical padding */
+  .main-header .main-menu .navbar-collapse>ul>li {
+    padding: 22px 12px;
+  }
+}
+
 .marker-tooltip::after {
   content: '';
   position: absolute;
