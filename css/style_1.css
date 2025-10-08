@@ -1,3 +1,101 @@
+/* Hero carousel paragraph text color */
+.hero-text-slider p { color: #ffffff; }
+/* Hero carousel subtitle and heading */
+.hero-text-slider h2 { color: #ffffff; }
+/* Curved borders for background cover image blocks */
+.bg-cover {
+  border-radius: 16px 16px 0 0;
+  overflow: hidden;
+}
+/* Match curved bottoms for the content block under images */
+.service-item .content {
+  border-radius: 0 0 16px 16px;
+  overflow: hidden;
+}
+/* Optional: for other image+content cards using feature-item */
+.feature-item .content {
+  border-radius: 0 0 16px 16px;
+  overflow: hidden;
+}
+/* Hero carousel dots position over images */
+.hero-text-slider { position: relative; }
+.hero-text-slider .slick-dots {
+  position: absolute;
+  bottom: 100px; /* move slightly up over the image */
+  z-index: 3;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.hero-text-slider .slick-dots {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 20px;
+  padding: 8px 12px;
+  background: rgba(0, 0, 0, 0.25);
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+.hero-text-slider .slick-dots li { margin: 0; }
+.hero-text-slider .slick-dots li button {
+  width: 15px;
+  height: 15px;
+  padding: 0;
+  display: block;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.7);
+  line-height: 0;
+  font-size: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: background 280ms ease, -webkit-transform 280ms ease, -webkit-box-shadow 280ms ease;
+  transition: background 280ms ease, -webkit-transform 280ms ease, -webkit-box-shadow 280ms ease;
+  transition: transform 280ms ease, background 280ms ease, box-shadow 280ms ease;
+  transition: transform 280ms ease, background 280ms ease, box-shadow 280ms ease, -webkit-transform 280ms ease, -webkit-box-shadow 280ms ease;
+}
+.hero-text-slider .slick-dots li button:before { content: none; }
+.hero-text-slider .slick-dots li.slick-active button {
+  background: linear-gradient(135deg, #ff6a00 0%, #ff944d 100%);
+  -webkit-transform: scale(1.85);
+          transform: scale(1.85);
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+  -webkit-box-shadow: 0 6px 18px rgba(255, 106, 0, 0.45), 0 0 0 8px rgba(255, 106, 0, 0.22);
+          box-shadow: 0 6px 18px rgba(255, 106, 0, 0.45), 0 0 0 8px rgba(255, 106, 0, 0.22);
+  position: relative;
+}
+.hero-text-slider .slick-dots li.slick-active button::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #ff6a00;
+  opacity: 0.6;
+  -webkit-animation: heroDotPulse 1.6s ease-out infinite;
+          animation: heroDotPulse 1.6s ease-out infinite;
+}
+
+@-webkit-keyframes heroDotPulse {
+  0% { -webkit-transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
+  100% { -webkit-transform: translate(-50%, -50%) scale(1.8); opacity: 0; }
+}
+@keyframes heroDotPulse {
+  0% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
+  100% { transform: translate(-50%, -50%) scale(1.8); opacity: 0; }
+}
 /*
 Theme Name: Tekprof
 Theme URI: https://wp.webtend.net/tekprof
